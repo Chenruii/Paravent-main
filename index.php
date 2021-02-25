@@ -3,16 +3,13 @@
 
 // Les contraintes
 //debut
-$startMemory = memory_get_usage();
-$start = microtime(true);
+
+list($startMemory,$start) = array(memory_get_usage(),microtime(true));
+
 
 //exécution du code
-$arry =range(1,1000000);
 
-// fin
-$end = microtime(true);
-$endMemory = memory_get_usage();
 
 // sortie
-echo sprintf("Memoire utilisé est de %f kilo-octets<br>",($endMemory - $startMemory) /1024);
-echo sprintf("temps écoulé est de %f Millisecondes", round($end-$start,3));
+list($endMemory,$end) =array(memory_get_usage(),microtime(true));
+$string = sprintf("Memoire utilisé est de %f kilo-octets,temps écoulé est de %.3 Millisecondes",($endMemory - $startMemory) / 1024 /1024, $end -$start);
