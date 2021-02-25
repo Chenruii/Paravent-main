@@ -12,7 +12,7 @@ list($startMemory,$start) = array(memory_get_usage(),microtime(true));
 $largeur= range(1,100000);
 $altitude= [];
 
-$max =0; // altitude max
+$max =1; // altitude max
 $surface=0;  // surface unite abris
 
 for ($i = 1; $i <= $largeur; $i++) {
@@ -26,10 +26,11 @@ for ($i = 1; $i <= $largeur; $i++) {
     } else {
         $surface += 1;
     }
-    print (" la surface est de : ".$surface. " pour un largeur d'altitude " .$altitude);
+    print (" la surface est de : ".$surface. " pour un largeur d'altitude " .$altitude[$i]);
     //print ($surface);
 
 }
 // sortie
 list($endMemory,$end) = array(memory_get_usage(),microtime(true));
 $string = sprintf("Memoire utilisé est de %f kilo-octets,temps écoulé est de %.3 Millisecondes",($endMemory - $startMemory) / 1024 /1024, $end -$start);
+echo ("Le microtime est : ".microtime());
