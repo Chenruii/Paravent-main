@@ -1,4 +1,7 @@
 # Paravent
+#Rui CHEN
+pour exécuter la commande sous ligne de commande
+- php index.php -n 10 -h "30 27 17 42 29 12 14 41 42 42"
  
 Énoncé
 
